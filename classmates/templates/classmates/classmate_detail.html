@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: pink; /* Pink background */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute and flowery font */
+        }
+
+        h1 {
+            background-image: url('https://images.app.goo.gl/NvNCP5jNawFEeaZq9');
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #880E4F; /* Dark pink for header */
+        }
+
+        p {
+            color: #880E4F; /* Dark pink for text */
+        }
+    </style>
+    <title>Classmate Details</title>
+</head>
+<body>
+
+<h1>Classmate Details</h1>
+<h2>Name: {{object.firstname}} {{object.lastname}}</h2>
+<p>Age: {{ object.age }}</p>
+<p>Gender: {{ object.gender }}</p>
+<p>Address: {{ object.address }}</p>
+
+</body>
+</html>

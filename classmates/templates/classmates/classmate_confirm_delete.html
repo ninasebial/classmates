@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: pink; /* Pink background */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute and flowery font */
+        }
+
+        h1 {
+            background-image: url('https://images.app.goo.gl/NvNCP5jNawFEeaZq9');
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFEBEE; /* Lighter pink for form background */
+            border-radius: 10px;
+        }
+
+        p {
+            color: #880E4F; /* Dark pink for text */
+        }
+
+        input[type="submit"] {
+            background-color: #880E4F; /* Dark pink background for submit button */
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF4081; /* Lighter pink on hover for submit button */
+        }
+    </style>
+    <title>Classmate Delete</title>
+</head>
+<body>
+
+<h1>Classmate Delete</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>

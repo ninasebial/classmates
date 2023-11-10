@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: pink; /* Pink background */
+        }
+
+        h1 {
+            background-image: url('https://images.app.goo.gl/NvNCP5jNawFEeaZq9');
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute and flowery font */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FFC0CB; /* Light pink for table header */
+        }
+
+        tr:nth-child(even) {
+            background-color: #FFEBEE; /* Lighter pink for even rows */
+        }
+
+        a {
+            color: #880E4F; /* Dark pink for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+    <title>Classmates</title>
+</head>
+<body>
+
+<h1>Classmates</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for classmate in object_list %}
+        <tr>
+            <td>{{ classmate.firstname }}</td>
+            <td>{{ classmate.lastname }}</td>
+            <td>{{ classmate.age }}</td>
+            <td>{{ classmate.address }}</td>
+            <td>{{ classmate.gender }}</td>
+            <td><a href="{% url 'classmate_view' classmate.id %}">view</a></td>
+            <td><a href="{% url 'classmate_edit' classmate.id %}">edit</a></td>
+            <td><a href="{% url 'classmate_delete' classmate.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'classmate_new' %}">New</a>
+
+</body>
+</html>
